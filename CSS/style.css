@@ -1,3 +1,43 @@
 *{
     margin: 0;
 }
+
+body{
+    background-color: #c6ceda;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quizContainer{
+    background-color: white;
+    width: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.quizHeader{
+    padding: 10%;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    padding-top: 20px;
+}
+
+ul li{
+    padding-top: 10px;
+}
+
+button{
+    display: block;
+    background-color: rgb(156, 141, 224);
+    width: 100%;
+    color: white;
+    font-size: medium;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+}
