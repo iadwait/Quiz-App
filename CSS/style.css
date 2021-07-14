@@ -31,13 +31,22 @@ ul li{
     padding-top: 10px;
 }
 
+ul li label,input{
+    cursor: pointer;
+}
+
 button{
     display: block;
-    background-color: rgb(156, 141, 224);
+    background-color: rgb(233, 85, 196);
     width: 100%;
     color: white;
     font-size: medium;
     font-weight: bold;
     padding: 15px;
     border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgb(218, 40, 173);
 }
