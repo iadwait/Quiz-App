@@ -50,3 +50,8 @@ button{
 button:hover{
     background-color: rgb(218, 40, 173);
 }
+
+h2{
+    text-align: center;
+    padding: 1rem;
+}

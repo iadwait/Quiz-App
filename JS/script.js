@@ -26,6 +26,7 @@ const quizData = [
 
 ]
 
+const quizContainer = document.getElementById('quiz');
 const question = document.getElementById('question');
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -83,7 +84,8 @@ btnSubmit.addEventListener('click', () => {
         if(currentQuestion < quizData.length) {
             loadQuiz();
         } else {
-            alert('Quiz finished');
+            // alert('Quiz finished');
+            quizContainer.innerHTML = `<h2>You Answered Correctely ${score}/${quizData.length}.</h2>`;
         }
     } else {
         alert('Please Select an Answer!!');
