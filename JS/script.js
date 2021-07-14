@@ -85,7 +85,10 @@ btnSubmit.addEventListener('click', () => {
             loadQuiz();
         } else {
             // alert('Quiz finished');
-            quizContainer.innerHTML = `<h2>You Answered Correctely ${score}/${quizData.length}.</h2>`;
+            quizContainer.innerHTML = `
+            <h2>You Answered Correctely ${score}/${quizData.length}.</h2>
+            <button onclick="location.reload()">Reload</button>
+            `;
         }
     } else {
         alert('Please Select an Answer!!');
