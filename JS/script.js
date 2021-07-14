@@ -32,13 +32,16 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const btnSubmit = document.getElementById('submit');
+const answers = document.querySelectorAll(".answer");
 
-let currentQuestion = 0
+let currentQuestion = 0;
+let score = 0;
 
 loadQuiz();
 
 function loadQuiz()
 {
+    deSelectOption();
     const currentQuiz = quizData[currentQuestion]
     question.innerHTML = currentQuiz.questions
     a_text.innerHTML = currentQuiz.a
@@ -47,12 +50,42 @@ function loadQuiz()
     d_text.innerHTML = currentQuiz.d
 }
 
-btnSubmit.addEventListener('click', () => {
-    currentQuestion++;
+function getSelectedOption()
+{
+    let selectedAnswer = undefined
 
-    if(currentQuestion < quizData.length) {
-        loadQuiz();
+    answers.forEach((answers) => {
+        if (answers.checked) {
+            selectedAnswer = answers.id;
+            // console.log(answer);
+        }
+        // console.log(answers.checked);
+    });
+
+    return selectedAnswer;
+}
+
+function deSelectOption() {
+    answers.forEach((answers) => {
+        answers.checked = false;
+    });
+}
+
+btnSubmit.addEventListener('click', () => {
+    const answer = getSelectedOption();
+    
+    if (answer) {
+        if (answer === quizData[currentQuestion].correct) {
+            score++;
+        }
+        currentQuestion++;
+
+        if(currentQuestion < quizData.length) {
+            loadQuiz();
+        } else {
+            alert('Quiz finished');
+        }
     } else {
-        alert('Quiz finished');
+        alert('Please Select an Answer!!');
     }
 })
